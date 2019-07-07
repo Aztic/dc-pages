@@ -1,0 +1,14 @@
+<div id="top-bar">
+  <i class="material-icons back-icon"
+     *ngIf="backRoute.length > 0"
+     routerLink="{{backRoute}}"
+  >
+    keyboard_backspace
+  </i>
+  <i class="material-icons clear-icon"
+     *ngIf="backToHome"
+     routerLink="/"
+  >
+    clear
+  </i>
+</div>

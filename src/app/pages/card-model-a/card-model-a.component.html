@@ -1,0 +1,78 @@
+<app-top-bar [backRoute]="'/card-list'"></app-top-bar>
+
+<div class="container-fluid">
+  <div class="row justify-content-center" style="margin-top: 20px">
+    <div class="tabNpc">
+      <div class="contentNpc" [ngStyle]="{'background-color': cardColor, 'border-left': leftBorder}"
+      >
+        <img [src]="headerImage" alt="">
+        <input class="titleNpc" type="text" [(ngModel)]="npcName" [ngStyle]="{'background-color': 'transparent'}">
+        <textarea class="guideTab" [(ngModel)]="npcDescription" [ngStyle]="{'background-color': 'transparent', 'border': 'none'}"> </textarea>
+
+      </div>
+      <div class="origen" style="width:580px;margin-left: 0px;background: #72598e;" >
+        <a href="https://www.facebook.com/daquinoblanco">Aquino</a> &copy; Para uso exlusivo en <a href="http://demonic-city.foroactivo.com">Demonic City</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 30px">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title text-center">Configuración</div>
+        </div>
+        <div class="card-body">
+          <form>
+            <br/>
+            <div class="form-group row">
+              <label for="border-selector" class="col-3">Color de borde: </label>
+              <input id="border-selector"
+                     [style.background]="borderColor"
+                     class="color-selector form-control col-1"
+                     (colorPickerChange)="reBuildBorder($event)"
+                     [(colorPicker)]="borderColor" />
+            </div>
+
+            <div class="form-group row">
+              <label for="background-selector" class="col-3">Color de fondo: </label>
+              <input id="background-selector"
+                     class="color-selector form-control col-1"
+                     [style.background]="cardColor"
+                     [(colorPicker)]="cardColor" />
+            </div>
+            <div class="form-group row">
+              <label for="header-img" class="col-3">Imagen de cabecera:</label>
+              <input type="text"
+                     id="header-img"
+                     [(ngModel)]="headerImage" [value]="headerImage"
+                     class="form-control col-7"
+                     name="header-img"
+              >
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button class="btn btn-primary"
+                        style="width: 100%"
+                       [copy-clipboard]="copyToClipboard()"
+                       (copied)="notify($event)">Copiar al portapapeles</button>
+              </div>
+              <!--
+              <div class="col-6">
+                <button class="btn btn-primary" style="width:100%">Importar</button>
+              </div>
+              -->
+            </div>
+
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br/>
+  <br/>
+</div>
+
+

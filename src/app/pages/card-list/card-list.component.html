@@ -1,0 +1,10 @@
+<app-top-bar [backRoute]="'/home'" [backToHome]="false"></app-top-bar>
+<div class="menu-background">
+  <div class="menu container-fluid">
+    <div *ngFor="let route of routes"
+         class="row justify-content-center"
+         routerLink="{{route.route}}">
+      <div class="menu-option col-4 text-center">{{route.name}}</div>
+    </div>
+  </div>
+</div>

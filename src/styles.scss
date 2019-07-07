@@ -1,0 +1,328 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto|Roboto+Condensed&display=swap');
+
+#card-app {
+  width: 100%;
+  height: 1080px;
+  position: relative;
+}
+
+.outlet {
+  width: 800px;
+  height: 900px;
+  max-width: 800px;
+  max-height: 900px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: #473f5c 2px solid;
+  overflow: auto;
+}
+
+
+input.color-selector {
+  width: 20px !important;
+  cursor: pointer;
+}
+
+
+.outlet {
+  /*
+  background: rgb(0,25,36);
+  background: linear-gradient(229deg, rgba(0,25,36,1) 0%, rgba(9,92,121,1) 36%, rgba(0,212,255,1) 84%);
+  */
+  background: url(https://i.ibb.co/5THtCXS/demonic-banner.png) no-repeat center;
+  background-size: cover;
+}
+
+
+/*==============          FICHAS/TABLILLAS - AQUINO          ==============*/
+/* Tablas para Personajes */
+.tabDC{
+  max-width: 480px;
+  width: 480px;
+}
+.headerTab{
+  height: 140px;
+  width: 480px;
+}
+.bgHeader{
+  position: relative;
+  height: 140px;
+  width: 480px;
+  background: url(https://cdn.discordapp.com/attachments/567173362292359168/592115923608010753/header.png);
+}
+.ava{
+  margin-top: -100px;
+  float: left;
+  width: 116px;
+  height: 100px;
+  margin-left: 22px;
+  background: url(http://via.placeholder.com/118x100);
+  background-size: 100%;
+}
+.nameTab{
+  position: absolute;
+  margin-top: -73px;
+  margin-left: 240px;
+  width: 240px;
+  color: #77669D;
+  letter-spacing: 2px;
+  font-size: 25px;
+}
+.nameTab p {
+  text-align: center;
+  font-family: Oswald;
+}
+.origen{
+  float: left;
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  font-size: 9px;
+  letter-spacing: 5px;
+  background: #77669D;
+  color: #fff;
+}
+.optionsTab{
+  width: 37%;
+  height: 503px;
+  float: left;
+  background: #404549;
+}
+.textTab{
+  width: 63%;
+  height: 503px;
+  float: left;
+  background: #fff;
+}
+.infoTitle {
+  font-size: 15px;
+  color: #fff;
+  text-shadow: 2px 3px 3px #77669D;
+}
+.infoText p span{
+  font-weight: 100;
+}
+.infoText p{
+  height: 30px;
+  line-height: 30px;
+  width: 80%;
+  margin: 5px 10%;
+  background: #77669D;
+  color: #fff;
+  outline: 1px solid #fff;
+  outline-offset: -5px;
+  font-size: 1em;
+}
+.infoText i{
+  color: #fff;
+}
+.ext{
+  color: #404549;
+  text-align: justify;
+  font-size: 9px;
+  height: 127px;
+  max-height: 127px;
+  margin: 0 10px;
+  background: white;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.textTab h2{
+  font-family: Oswald;
+  margin: 10px 0;
+  color: #77669D;
+}
+.ingresarTexto {
+  box-sizing: border-box;
+  height: 113px;
+  border: 1px solid #77669D;
+  margin: 0 20px;
+  padding: 10px;
+  overflow-y: auto;
+  color: #77669D;
+  text-align: justify;
+  font-size: 11px;
+  overflow-x: hidden;
+}
+/* Tablas para NPC y Guías */
+.contentNpc{
+  width: 580px;
+  height: 700px;
+  /*background-color: white;*/
+  /*border-left: 20px solid #72598e;*/
+  padding: 20px;
+  box-sizing: border-box;
+}
+.npcInfoTwo::-webkit-scrollbar,
+.npcInfoOne::-webkit-scrollbar {
+  background-color: #473f5c;
+  border: 4px solid #000;
+  height: 9px;
+  width: 9px;
+  box-sizing: border-box;
+}
+.npcInfoTwo::-webkit-scrollbar-thumb,
+.npcInfoOne::-webkit-scrollbar-thumb {
+  background-color: #473f5c;
+  border: 3px solid #000;
+  height: auto;
+  box-sizing: border-box;
+}
+.contentNpc img{
+  padding-bottom: 10px;
+  border-bottom: 10px solid #72598e;
+  box-sizing: border-box;
+}
+.titleNpc{
+  padding: 10px 0;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  border-bottom: 10px solid #72598e;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  color: black;
+  width: 100%;
+  font-family: Oswald;
+}
+.optionsNpc{
+  width: 100%;
+  height: 140px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+.datoNpc{
+  width: 264.5px;
+  height: 30px;
+  margin-left: -4.5px;
+  border-left: 5px solid white;
+  margin-bottom: 5px;
+  background-color: #72598e;
+  float: left;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  box-sizing: border-box;
+}
+.npcInfoOne{
+  float: left;
+  width: 55%;
+  height: 230px;
+  border: 1px dashed #72598e;
+  border-right: none;
+  margin-right: 1%;
+  overflow: auto;
+  text-align: justify;
+  padding: 5px;
+  box-sizing: border-box;
+  color: #72598e;
+}
+.npcInfoTwo{
+  float: left;
+  width: 44%;
+  height: 230px;
+  border: 1px dashed #72598e;
+  border-right: none;
+  overflow: auto;
+  text-align: justify;
+  padding: 5px;
+  box-sizing: border-box;
+  color: #72598e;
+}
+.titleNpcInfo{
+  padding: 5px;
+  text-align: center;
+  border-bottom: 1px dashed #72598e;
+  box-sizing: border-box;
+  color: black;
+  font-family: Oswald;
+}
+.guideTab::-webkit-scrollbar {
+  background-color: #473f5c;
+  border: 4px solid #000;
+  height: 9px;
+  width: 9px;
+  box-sizing: border-box;
+}
+.guideTab::-webkit-scrollbar-thumb {
+  background-color: #473f5c;
+  border: 3px solid #000;
+  height: auto;
+  box-sizing: border-box;
+}
+.guideTab{
+  float: left;
+  width: 100%;
+  height: 378px;
+  border: 1px dashed #72598e;
+  overflow: auto;
+  text-align: justify;
+  padding: 5px;
+  box-sizing: border-box;
+  color: black;
+  font-family: Oswald;
+}
+
+
+/** Menus **/
+
+.menu-background {
+  width: 100%;
+  height: 840px;
+  background: rgba(0,0,0,.5);
+}
+
+.menu {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu div {
+  vertical-align: middle;
+}
+
+.menu-option {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  background: red;
+  color: white;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.menu-option:hover {
+  animation: menu-selection .2s linear forwards;
+}
+
+.row + .row {
+  margin-top: 10px;
+}
+
+@keyframes menu-selection {
+  50%{background: #ff3f3e;}
+  100%{background: #ff5463;}
+
+}
+
+*:focus,
+*:active,
+a:active,
+a:focus,
+input:focus,
+input:active {
+  -moz-outline-style: none;
+  outline:none;
+  outline: 0;
+}
