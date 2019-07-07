@@ -30,11 +30,14 @@ export class CardModelAComponent implements OnInit {
   }
 
   copyToClipboard() {
-    return 'A pos funciona xdxd';
+    // tslint:disable-next-line:max-line-length
+    const template = `<center><div class="tabNpc"> <div class="contentNpc" style="background-color: ${this.cardColor}!important;border-left: ${this.borderColor}!important"> <img src="${this.headerImage}" alt=""> <div class="titleNpc"> ${this.npcName}</div><div class="guideTab"> ${this.npcDescription} </div></div><div class="origen" style="width:580px;margin-left: 128px;background: #72598e;"><a href="https://www.facebook.com/daquinoblanco">Aquino</a> &copy; Para uso exlusivo en <a href="http://demonic-city.foroactivo.com">Demonic City</a></div></center>`;
+
+    return template;
   }
 
   notify(event) {
-    alert('Copiado al portapapeles!');
+    alert('¡Copiado al portapapeles!');
   }
 
 }
