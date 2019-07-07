@@ -13,7 +13,7 @@ export class CardModelAComponent implements OnInit {
   headerImage: string = 'https://via.placeholder.com/520x200';
 
   cardColor:string = 'white';
-  borderColor: string = '#0000ff';
+  borderColor: string = '#72598e';
   leftBorder:string = `20px solid ${this.borderColor}`;
 
   constructor(public colorPicker: ColorPickerService) { }
