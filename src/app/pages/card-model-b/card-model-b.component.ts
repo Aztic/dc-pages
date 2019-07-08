@@ -22,7 +22,16 @@ export class CardModelBComponent implements OnInit {
   borderColor: string = '#72598e';
   leftBorder:string = `20px solid ${this.borderColor}`;
   extraData: CardExtraData[] = [
-
+    {
+      content: 'Dato 1',
+      backgroundColor: '#72598e',
+      textColor: '#ffffff'
+    },
+    {
+      content: 'Dato 2, editame abajo',
+      backgroundColor: '#72598e',
+      textColor: '#ffffff'
+    }
   ];
 
   /**
@@ -49,7 +58,7 @@ export class CardModelBComponent implements OnInit {
     }).join('');
     // tslint:disable-next-line:max-line-length
     const template = `<center> <div align="center" class="tabNpc"> <div class="contentNpc" style="background-color: ${this.cardColor}!important;border-left:20px solid ${this.borderColor}!important"> <img src="${this.headerImage}" alt=""> <div class="titleNpc"> ${this.npcName}</div><div class="optionsNpc">${minifiedData}</div><div class="npcInfoOne"> <h2 class="titleNpcInfo">${this.npcTitle1}</h2>${this.npcDescription1}</div><div class="npcInfoTwo"> <h2 class="titleNpcInfo">${this.npcTitle2}</h2>${this.npcDescription2}</div></div></div><div class="origen" style="width:580px;margin-left: 128px;background: #72598e;"><a href="https://www.facebook.com/daquinoblanco">Aquino</a> &copy; Para uso exlusivo en <a href="https://demonic-city.foroactivo.com">Demonic City</a></div></center>`;
-    
+
     return template;
   }
 
@@ -69,6 +78,10 @@ export class CardModelBComponent implements OnInit {
       });
     }
     // Add extra data to the
+  }
+
+  clearExtraData() {
+    this.extraData = [];
   }
 
   deleteExtraData(index) {
