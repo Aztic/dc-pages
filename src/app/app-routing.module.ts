@@ -21,23 +21,28 @@ const routes: Routes = [
 
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    data: {animation: 'Home'}
   },
   {
     path: 'card-list',
-    component: CardListComponent
+    component: CardListComponent,
+    data: {animation: 'Card-List'}
   },
   {
     path: 'card-model-a',
-    component: CardModelAComponent
+    component: CardModelAComponent,
+    data: {animation: 'Card'}
   },
   {
     path: 'card-model-b',
-    component: CardModelBComponent
+    component: CardModelBComponent,
+    data: {animation: 'Card'}
   },
   {
     path: 'card-model-c',
-    component: CardModelCComponent
+    component: CardModelCComponent,
+    data: {animation: 'Card'}
   },
   {
     path: '**',

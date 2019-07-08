@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CardListComponent } from './pages/card-list/card-list.component';
 import {ComponentsModule} from './components/components.module';
 import {TopBarComponent} from './components/top-bar/top-bar.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import {TopBarComponent} from './components/top-bar/top-bar.component';
     FormsModule,
     ColorPickerModule,
     CopyClipboardModule,
-    ComponentsModule
+    ComponentsModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
