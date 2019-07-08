@@ -1,7 +1,11 @@
 <div id="card-app">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
-  <div class="outlet">
-    <router-outlet></router-outlet>
+  <div [@routeAnimations]="o && o.activatedRouteData
+      && o.activatedRouteData['animation']">
+    <div class="outlet" >
+      <router-outlet #o="outlet"></router-outlet>
+    </div>
   </div>
+
 </div>
