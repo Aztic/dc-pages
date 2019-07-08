@@ -347,6 +347,19 @@ input:active {
   outline: 0;
 }
 
+::-webkit-scrollbar {
+  background-color: #473f5c;
+  border: 4px solid #000000;
+  height: 9px;
+  width: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #473f5c;
+  border: 3px solid #000000;
+  height: auto;
+}
+
 i {
   cursor: pointer;
 }
