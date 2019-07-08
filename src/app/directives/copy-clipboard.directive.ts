@@ -1,3 +1,8 @@
+/**
+ * Original code By Dan Dohotaru (https://stackoverflow.com/users/2583579/dan-dohotaru)
+ * Copied from here: https://stackoverflow.com/questions/49102724/angular-5-copy-to-clipboard
+ */
+
 import { Directive, Input, Output, EventEmitter, HostListener } from "@angular/core";
 
 @Directive({ selector: '[copy-clipboard]' })
@@ -18,8 +23,8 @@ export class CopyClipboardDirective {
     if (!this.payload)
       return;
 
-    let listener = (e: ClipboardEvent) => {
-      let clipboard = e.clipboardData || window['clipboardData'];
+    const listener = (e: ClipboardEvent) => {
+      const clipboard = e.clipboardData || window['clipboardData'];
       clipboard.setData('text', this.payload.toString());
       e.preventDefault();
       this.copied.emit(this.payload);
