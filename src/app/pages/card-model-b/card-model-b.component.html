@@ -1,1 +1,141 @@
-<p>card-model-b works!</p>
+<app-top-bar [backRoute]="'/card-list'"></app-top-bar>
+
+<div class="container-fluid">
+  <div class="row justify-content-center" style="margin-top: 20px">
+    <div align="center" class="tabNpc">
+      <div class="contentNpc" [ngStyle]="{'background-color': cardColor, 'border-left': leftBorder}">
+        <img [src]="headerImage" alt="no-image">
+        <input class="titleNpc" type="text" [(ngModel)]="npcName" [ngStyle]="{'background-color': 'transparent'}">
+        <div class="optionsNpc">
+          <div class="datoNpc" *ngFor="let data of extraData"
+               [ngStyle]="{'background-color': data.backgroundColor, 'color': data.textColor}">{{data.content}}</div>
+        </div>
+        <div class="npcInfoOne">
+          <div class="titleNpcInfo text-center">
+            <input class="titleNpcInfoInput" type="text" [(ngModel)]="npcTitle1" [ngStyle]="{'background-color': 'transparent'}">
+          </div>
+          <textarea class="guideTab" [(ngModel)]="npcDescription1" [ngStyle]="{'background-color': 'transparent', 'border': 'none'}"> </textarea>
+          <!--<h2 class="titleNpcInfo">Título</h2>--> <!--Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam natus tempore, explicabo harum voluptatum sit velit odio saepe neque quod? Sit cumque doloremque eveniet ea expedita commodi inventore nesciunt labore?
+          <br>
+          <br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt accusantium, consequatur eaque eos, delectus omnis nam voluptates, quibusdam quos rem voluptate. Iusto illum provident reiciendis eaque ullam odio omnis delectus.-->
+        </div>
+
+        <div class="npcInfoTwo">
+          <div class="titleNpcInfo text-center">
+            <input class="titleNpcInfoInput" type="text" [(ngModel)]="npcTitle2" [ngStyle]="{'background-color': 'transparent'}">
+          </div>
+          <textarea class="guideTab" [(ngModel)]="npcDescription2" [ngStyle]="{'background-color': 'transparent', 'border': 'none'}"> </textarea>
+          <!--<h2 class="titleNpcInfo">Título</h2>--><!--Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nisi sequi corrupti maxime earum perferendis aperiam, cupiditate expedita reprehenderit, ut incidunt veniam! Quasi mollitia cupiditate eaque temporibus qui ratione nobis?
+          <br>
+          <br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt accusantium, consequatur eaque eos, delectus omnis nam voluptates, quibusdam quos rem voluptate. Iusto illum provident reiciendis eaque ullam odio omnis delectus. -->
+        </div>
+
+      </div>
+    </div>
+    <div class="origen text-center" style="width:580px;margin-left: 0px;background: #72598e;"><a href="https://www.facebook.com/daquinoblanco">Aquino</a> &copy; Para uso exlusivo en <a href="https://demonic-city.foroactivo.com">Demonic City</a></div>
+  </div>
+
+  <div class="row" style="margin-top: 30px">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title text-center">Configuración</div>
+        </div>
+        <div class="card-body">
+          <form>
+            <br/>
+            <div class="form-group row">
+              <label for="border-selector" class="col-3">Color de borde: </label>
+              <input id="border-selector"
+                     [style.background]="borderColor"
+                     class="color-selector form-control col-1"
+                     (colorPickerChange)="reBuildBorder($event)"
+                     [(colorPicker)]="borderColor" />
+            </div>
+
+            <div class="form-group row">
+              <label for="background-selector" class="col-3">Color de fondo: </label>
+              <input id="background-selector"
+                     class="color-selector form-control col-1"
+                     [style.background]="cardColor"
+                     [(colorPicker)]="cardColor" />
+            </div>
+            <div class="form-group row">
+              <label for="header-img" class="col-3">Imagen de cabecera:</label>
+              <input type="text"
+                     id="header-img"
+                     [(ngModel)]="headerImage" [value]="headerImage"
+                     class="form-control col-7"
+                     name="header-img"
+              >
+            </div>
+
+            <h4 class="extra-data-separator text-center">Datos extra</h4>
+            <div class="row">
+              <div class="col-12">
+                <button class="btn btn-primary"
+                        style="width: 100%"
+                        (click)="addExtraData()">Añadir dato</button>
+              </div>
+
+              <!--
+              <div class="col-6">
+                <button class="btn btn-primary" style="width:100%">Importar</button>
+              </div>
+              -->
+            </div>
+            <div class="form-group row" *ngFor="let data of extraData; let i = index">
+
+                <input type="text" class="col-4"
+                       [(ngModel)]="data.content"
+                       name="content{{i}}"
+                       [ngStyle]="{'background-color': 'transparent'}"
+                       [value]="data.content"
+                >
+                <label for="background-color-{{i}}" class="col-2">Fondo:</label>
+                <input id="background-color-{{i}}"
+                       [style.background]="data.backgroundColor"
+                       class="color-selector form-control col-1"
+                       [(colorPicker)]="data.backgroundColor" />
+                <label for="text-color-{{i}}" class="col-2">Texto:</label>
+                <input id="text-color-{{i}}"
+                       [style.background]="data.textColor"
+                       class="color-selector form-control col-1"
+                       (colorPickerChange)="reBuildBorder($event)"
+                       [(colorPicker)]="data.textColor" />
+
+                <i class="material-icons clear-icon col-2"
+                   (click)="deleteExtraData(i)"
+                >
+                  clear
+                </i>
+
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <button class="btn btn-primary"
+                        style="width: 100%"
+                        [copy-clipboard]="copyToClipboard()"
+                        (copied)="notify($event)">Copiar al portapapeles</button>
+              </div>
+
+              <!--
+              <div class="col-6">
+                <button class="btn btn-primary" style="width:100%">Importar</button>
+              </div>
+              -->
+            </div>
+
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br/>
+  <br/>
+</div>
+
+
