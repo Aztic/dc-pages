@@ -4,9 +4,7 @@ import {slideInAnimation} from './route-animation';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  animations: [
-    slideInAnimation ]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'dc-pages';
