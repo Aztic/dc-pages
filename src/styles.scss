@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto|Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto|Roboto+Condensed|Anton&display=swap');
 
 #card-app {
   width: 100%;
@@ -16,6 +16,7 @@
   max-width: 800px;
   max-height: 900px;
   overflow-x: hidden;
+  position: relative;
   /*
   position: relative;
   top: 50%;
@@ -34,12 +35,15 @@ input.color-selector {
 
 
 .outlet {
+  background: #485563; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #485563, #29323c); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #485563, #29323c);
   /*
   background: rgb(0,25,36);
   background: linear-gradient(229deg, rgba(0,25,36,1) 0%, rgba(9,92,121,1) 36%, rgba(0,212,255,1) 84%);
-  */
+  /*
   background: url(https://i.ibb.co/5THtCXS/demonic-banner.png) no-repeat center;
-  background-size: cover;
+  background-size: cover;*/
 }
 
 
@@ -295,8 +299,18 @@ input.titleNpcInfoInput {
 .menu-background {
   width: 100%;
   height: 840px;
-  background: rgba(0,0,0,.5);
+  position: relative;
+  overflow: hidden;
+  /*background: rgba(0,0,0,.5);*/
 }
+
+.full-background {
+  width: 100%;
+  height: 810px;
+  position: relative;
+  /*background: rgba(0,0,0,.5);*/
+}
+
 
 .menu {
   justify-content: center;
@@ -336,21 +350,21 @@ input.titleNpcInfoInput {
  */
 
 .menu-option {
-  -moz-box-shadow: 0px 1px 0px 0px #3dc21b;
-  -webkit-box-shadow: 0px 1px 0px 0px #3dc21b;
-  box-shadow: 0px 1px 0px 0px #3dc21b;
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #943131), color-stop(1, #153d00));
-  background:-moz-linear-gradient(top, #943131 5%, #153d00 100%);
-  background:-webkit-linear-gradient(top, #943131 5%, #153d00 100%);
-  background:-o-linear-gradient(top, #943131 5%, #153d00 100%);
-  background:-ms-linear-gradient(top, #943131 5%, #153d00 100%);
-  background:linear-gradient(to bottom, #943131 5%, #153d00 100%);
+  -moz-box-shadow: 0px 1px 0px 0px #4d5063;
+  -webkit-box-shadow: 0px 1px 0px 0px #4d5063;
+  box-shadow: 0px 1px 0px 0px #4d5063;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #004a63), color-stop(1, #29323c));
+  background:-moz-linear-gradient(top, #004a63 5%, #29323c 100%);
+  background:-webkit-linear-gradient(top, #004a63 5%, #29323c 100%);
+  background:-o-linear-gradient(top, #004a63 5%, #29323c 100%);
+  background:-ms-linear-gradient(top, #004a63 5%, #29323c 100%);
+  background:linear-gradient(to bottom, #004a63 5%, #29323c 100%);
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#943131', endColorstr='#153d00',GradientType=0);
   background-color:#943131;
   -moz-border-radius:28px;
   -webkit-border-radius:28px;
   border-radius:28px;
-  border:2px solid #18ab29;
+  border:2px solid #4d5063;
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
@@ -362,7 +376,7 @@ input.titleNpcInfoInput {
 }
 
 .menu-option:hover {
-  animation: menu-selection .2s linear forwards;
+  animation: menu-selection .4s linear forwards;
 }
 .menu-option:active {
   position:relative;
@@ -376,8 +390,8 @@ input.titleNpcInfoInput {
 }
 
 @keyframes menu-selection {
-  50%{background: #ff3f3e;}
-  100%{background: #ff5463;}
+  50%{background: #00283d;}
+  100%{background: #00283d;}
 
 }
 
