@@ -15,6 +15,10 @@ export class CardListComponent implements OnInit {
     {
       name: 'Modelo ficha 2',
       route: '/card-model-b'
+    },
+    {
+      name: 'Modelo ficha 3',
+      route: '/card-model-c'
     }
   ];
 

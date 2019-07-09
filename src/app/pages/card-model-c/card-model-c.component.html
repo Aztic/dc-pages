@@ -5,62 +5,35 @@
     <div class="tabDC">
       <div class="headerTab" style="position: relative">
         <div class="bgHeader"></div>
-        <div class="ava"></div>
-        <div class="nameTab">
-          Nombre Apellido 2
+        <div class="ava" [ngStyle]="{'background': 'url('+headerImage+')'}"></div>
+        <div class="nameTab" [textContent]="npcName" (input)="npcName=$event.target.textContent" contenteditable>
+          {{npcName}}
         </div>
       </div>
-      <div class="origen text-center">&diams; Nombre del Personaje &diams; Lugar de Origen &diams;</div>
+      <div class="origen text-center">&diams; <span [textContent]="characterName" (input)="characterName=$event.target.textContent" contenteditable>{{characterName}}</span> &diams; <span [textContent]="characterOrigin" (input)="characterOrigin=$event.target.textContent" contenteditable>{{characterOrigin}}</span> &diams;</div>
       <div class="optionsTab">
         <div class="infoTitle text-center" style="margin-top: 20px; margin-bottom: 15px;">Datos Principales</div>
         <div class="infoText">
-          <p class="fas fa-cannabis text-center"><span> Apodo: </span><i>Data</i></p>
-          <p class="fas fa-cannabis text-center"><span> Edad: </span><i>Data</i></p>
-          <p class="fas fa-cannabis text-center"><span> Género: </span><i>Data</i></p>
-          <p class="fas fa-cannabis text-center"><span> Origen: </span><i>Data</i></p>
-          <p class="fas fa-cannabis text-center"><span> Raza: </span><i>Data</i></p>
-          <p class="fas fa-cannabis text-center"><span> Clase: </span><i>Data</i></p>
-          <p class="fas fa-cannabis text-center"><span> Facción: </span><i>Data</i></p>
+          <p class="fas fa-cannabis text-center"><span> Apodo: </span><i [textContent]="characterData.nickname" (input)="characterData.nickname=$event.target.textContent" contenteditable>{{characterData.nickname}}</i></p>
+          <p class="fas fa-cannabis text-center"><span> Edad: </span><i [textContent]="characterData.age" (input)="characterData.age=$event.target.textContent" contenteditable>{{characterData.age}}</i></p>
+          <p class="fas fa-cannabis text-center"><span> Género: </span><i [textContent]="characterData.genre" (input)="characterData.genre=$event.target.textContent" contenteditable>{{characterData.genre}}</i></p>
+          <p class="fas fa-cannabis text-center"><span> Origen: </span><i [textContent]="characterData.origin" (input)="characterData.origin=$event.target.textContent" contenteditable>{{characterData.origin}}</i></p>
+          <p class="fas fa-cannabis text-center"><span> Raza: </span><i [textContent]="characterData.race" (input)="characterData.race=$event.target.textContent" contenteditable>{{characterData.race}}</i></p>
+          <p class="fas fa-cannabis text-center"><span> Clase: </span><i [textContent]="characterData.characterClass" (input)="characterData.characterClass=$event.target.textContent" contenteditable>{{characterData.characterClass}}</i></p>
+          <p class="fas fa-cannabis text-center"><span> Facción: </span><i [textContent]="characterData.faction" (input)="characterData.faction=$event.target.textContent" contenteditable>{{characterData.faction}}</i></p>
         </div>
         <div class="infoTitle text-center" style="margin-top: 20px; margin-bottom: 15px;">Extras</div>
-        <div class="ext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit beatae, ad fuga praesentium dolorum excepturi magnam aut corporis ullam modi hic animi quia nesciunt tenetur corrupti dolorem, veniam repellendus dicta!
-          <br>
-          <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, similique? Aspernatur impedit natus, maiores eligendi corrupti et sit saepe autem modi iure odio dicta velit libero in ipsam harum distinctio.</div>
+        <textarea class="ext" [(ngModel)]="extraData" [ngStyle]="{'background-color': 'white', 'resize': 'none', 'width': '157.59px', 'text-align': 'justify'}"> </textarea>
       </div>
       <div class="textTab">
-        <h2 class="text-center">Físico</h2>
-        <div class="ingresarTexto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit beatae, ad fuga praesentium dolorum excepturi magnam aut corporis ullam modi hic animi quia nesciunt tenetur corrupti dolorem, veniam repellendus dicta!
-          <br>
-          <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, similique? Aspernatur impedit natus, maiores eligendi corrupti et sit saepe autem modi iure odio dicta velit libero in ipsam harum distinctio.
-          <br>
-          <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit beatae, ad fuga praesentium dolorum excepturi magnam aut corporis ullam modi hic animi quia nesciunt tenetur corrupti dolorem, veniam repellendus dicta!
-          <br>
-          <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, similique? Aspernatur impedit natus, maiores eligendi corrupti et sit saepe autem modi iure odio dicta velit libero in ipsam harum distinctio.
-          <br>
-          <br>
-        </div>
-        <h2 class="text-center">Psicología</h2>
-        <div class="ingresarTexto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit beatae, ad fuga praesentium dolorum excepturi magnam aut corporis ullam modi hic animi quia nesciunt tenetur corrupti dolorem, veniam repellendus dicta!
-          <br>
-          <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, similique? Aspernatur impedit natus, maiores eligendi corrupti et sit saepe autem modi iure odio dicta velit libero in ipsam harum distinctio.
-          <br>
-          <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit beatae, ad fuga praesentium dolorum excepturi magnam aut corporis ullam modi hic animi quia nesciunt tenetur corrupti dolorem, veniam repellendus dicta!
-          <br>
-          <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, similique? Aspernatur impedit natus, maiores eligendi corrupti et sit saepe autem modi iure odio dicta velit libero in ipsam harum distinctio.
-          <br>
-          <br>
-        </div>
-        <h2 class="text-center">Historia</h2>
-        <div class="ingresarTexto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit beatae, ad fuga praesentium dolorum excepturi magnam aut corporis ullam modi hic animi quia nesciunt tenetur corrupti dolorem, veniam repellendus dicta!
-          <br>
-          <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, similique? Aspernatur impedit natus, maiores eligendi corrupti et sit saepe autem modi iure odio dicta velit libero in ipsam harum distinctio.
-          <br>
-          <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit beatae, ad fuga praesentium dolorum excepturi magnam aut corporis ullam modi hic animi quia nesciunt tenetur corrupti dolorem, veniam repellendus dicta!
-          <br>
-          <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, similique? Aspernatur impedit natus, maiores eligendi corrupti et sit saepe autem modi iure odio dicta velit libero in ipsam harum distinctio.
-          <br>
-          <br>
-        </div>
+        <h2 class="text-center" [textContent]="sectionsContent[0].name" (input)="sectionsContent[0].name=$event.target.textContent" contenteditable>{{sectionsContent[0].name}}</h2>
+        <textarea class="ingresarTexto" [(ngModel)]="sectionsContent[0].content" [ngStyle]="{'background-color': 'transparent', 'width': '262.38px', 'resize': 'none'}"> </textarea>
+
+        <h2 class="text-center" [textContent]="sectionsContent[1].name" (input)="sectionsContent[1].name=$event.target.textContent" contenteditable>{{sectionsContent[1].name}}</h2>
+        <textarea class="ingresarTexto" [(ngModel)]="sectionsContent[1].content" [ngStyle]="{'background-color': 'transparent', 'width': '262.38px', 'resize': 'none'}"> </textarea>
+
+        <h2 class="text-center" [textContent]="sectionsContent[2].name" (input)="sectionsContent[2].name=$event.target.textContent" contenteditable>{{sectionsContent[2].name}}</h2>
+        <textarea class="ingresarTexto" [(ngModel)]="sectionsContent[2].content" [ngStyle]="{'background-color': 'transparent', 'width': '262.38px', 'resize': 'none'}"> </textarea>
       </div>
       <div class="origen text-center"><a href="https://www.facebook.com/daquinoblanco">Aquino</a> &copy; Para uso exlusivo en <a href="http://demonic-city.foroactivo.com">Demonic City</a></div>
     </div>
@@ -76,23 +49,7 @@
           <form>
             <br/>
             <div class="form-group row">
-              <label for="border-selector" class="col-3">Color de borde: </label>
-              <input id="border-selector"
-                     [style.background]="borderColor"
-                     class="color-selector form-control col-1"
-                     (colorPickerChange)="reBuildBorder($event)"
-                     [(colorPicker)]="borderColor" />
-            </div>
-
-            <div class="form-group row">
-              <label for="background-selector" class="col-3">Color de fondo: </label>
-              <input id="background-selector"
-                     class="color-selector form-control col-1"
-                     [style.background]="cardColor"
-                     [(colorPicker)]="cardColor" />
-            </div>
-            <div class="form-group row">
-              <label for="header-img" class="col-3">Imagen de cabecera:</label>
+              <label for="header-img" class="col-3">Imagen de personaje:</label>
               <input type="text"
                      id="header-img"
                      [(ngModel)]="headerImage" [value]="headerImage"
