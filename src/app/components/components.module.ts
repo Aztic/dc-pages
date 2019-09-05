@@ -6,7 +6,7 @@ import {RouterModule} from '@angular/router';
 @NgModule({
   declarations: [TopBarComponent],
   exports: [
-    TopBarComponent
+    TopBarComponent,
   ],
   imports: [
     CommonModule,

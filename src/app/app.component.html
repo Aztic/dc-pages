@@ -4,7 +4,10 @@
   <div [@routeAnimations]="o && o.activatedRouteData
       && o.activatedRouteData['animation']">
     <div class="outlet" >
-      <router-outlet #o="outlet"></router-outlet>
+
+      <router-outlet #o="outlet">
+        <Angular-Bootstrap-Toasts-Container></Angular-Bootstrap-Toasts-Container>
+      </router-outlet>
     </div>
   </div>
 

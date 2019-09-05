@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ColorPickerService, Cmyk } from 'ngx-color-picker';
+import {AngularBootstrapToastsService} from 'angular-bootstrap-toasts';
+
 
 @Component({
   selector: 'app-card-model-a',
@@ -16,7 +18,8 @@ export class CardModelAComponent implements OnInit {
   borderColor: string = '#72598e';
   leftBorder:string = `20px solid ${this.borderColor}`;
 
-  constructor(public colorPicker: ColorPickerService) { }
+  constructor(public colorPicker: ColorPickerService,
+              public toastService: AngularBootstrapToastsService) { }
 
   ngOnInit() {
   }
@@ -33,7 +36,8 @@ export class CardModelAComponent implements OnInit {
   }
 
   notify(event) {
-    alert('¡Copiado al portapapeles!');
+    this.toastService.showConfirmToast({title: 'Portapapeles', text:'¡Copiado al portapapeles!', showProgressLine:true});
+    //alert('¡Copiado al portapapeles!');
   }
 
 }

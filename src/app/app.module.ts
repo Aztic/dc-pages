@@ -15,6 +15,10 @@ import {ComponentsModule} from './components/components.module';
 import {TopBarComponent} from './components/top-bar/top-bar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CardModelDComponent } from './pages/card-model-d/card-model-d.component';
+import {
+  AngularBootstrapToastsModule,
+  AngularBootstrapToastsService
+} from 'angular-bootstrap-toasts';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,7 @@ import { CardModelDComponent } from './pages/card-model-d/card-model-d.component
     CardModelDComponent
   ],
   imports: [
+    AngularBootstrapToastsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -34,9 +39,8 @@ import { CardModelDComponent } from './pages/card-model-d/card-model-d.component
     CopyClipboardModule,
     ComponentsModule,
     BrowserAnimationsModule,
-
   ],
-  providers: [],
+  providers: [AngularBootstrapToastsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
