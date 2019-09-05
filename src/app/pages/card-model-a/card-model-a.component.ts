@@ -36,8 +36,15 @@ export class CardModelAComponent implements OnInit {
   }
 
   notify(event) {
-    this.toastService.showConfirmToast({title: 'Portapapeles', text:'¡Copiado al portapapeles!', showProgressLine:true});
-    //alert('¡Copiado al portapapeles!');
+    this.toastService.showConfirmToast({
+      title: 'Portapapeles',
+      text:'¡Copiado al portapapeles!',
+      showProgressLine:false,
+      bodyClass:'bg-dark text-white no-shadow',
+      titleClass: 'bg-dark text-white no-shadow',
+      closeButtonClass:'bg-dark text-white no-shadow',
+      toastClass:'bg-dark text-white no-shadow'}
+      );
   }
 
 }

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {AngularBootstrapToastsService} from 'angular-bootstrap-toasts';
 
 @Component({
   selector: 'app-card-model-d',
@@ -7,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CardModelDComponent implements OnInit {
 
-  constructor() { }
+  constructor(public toastService: AngularBootstrapToastsService) { }
   characterImage: string = 'https://via.placeholder.com/187x470';
   innerCharacterImage: string = 'https://via.placeholder.com/150x150';
   petImage: string = 'https://via.placeholder.com/187x470';
@@ -93,7 +94,15 @@ export class CardModelDComponent implements OnInit {
   }
 
   notify(event) {
-    alert('¡Copiado al portapapeles!');
+    this.toastService.showConfirmToast({
+      title: 'Portapapeles',
+      text:'¡Copiado al portapapeles!',
+      showProgressLine:false,
+      bodyClass:'bg-dark text-white no-shadow',
+      titleClass: 'bg-dark text-white no-shadow',
+      closeButtonClass:'bg-dark text-white no-shadow',
+      toastClass:'bg-dark text-white no-shadow'}
+    );
   }
 
 }

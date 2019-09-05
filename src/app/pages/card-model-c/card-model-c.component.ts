@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ColorPickerService} from 'ngx-color-picker';
+import {AngularBootstrapToastsService} from 'angular-bootstrap-toasts';
 
 @Component({
   selector: 'app-card-model-c',
@@ -39,7 +40,7 @@ export class CardModelCComponent implements OnInit {
     }
   ];
 
-  constructor(public colorPicker: ColorPickerService) { }
+  constructor(public colorPicker: ColorPickerService, public toastService: AngularBootstrapToastsService) { }
 
   ngOnInit() {
   }
@@ -52,6 +53,14 @@ export class CardModelCComponent implements OnInit {
   }
 
   notify(event) {
-    alert('¡Copiado al portapapeles!');
+    this.toastService.showConfirmToast({
+      title: 'Portapapeles',
+      text:'¡Copiado al portapapeles!',
+      showProgressLine:false,
+      bodyClass:'bg-dark text-white no-shadow',
+      titleClass: 'bg-dark text-white no-shadow',
+      closeButtonClass:'bg-dark text-white no-shadow',
+      toastClass:'bg-dark text-white no-shadow'}
+    );
   }
 }

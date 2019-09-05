@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ColorPickerService} from 'ngx-color-picker';
 import {CardExtraData} from '../../interfaces/interfaces';
+import {AngularBootstrapToastsService} from 'angular-bootstrap-toasts';
 
 const maxDataLength = 8;
 
@@ -43,7 +44,7 @@ export class CardModelBComponent implements OnInit {
    *
    */
 
-  constructor(public colorPicker: ColorPickerService) { }
+  constructor(public colorPicker: ColorPickerService, public toastService: AngularBootstrapToastsService) { }
 
   ngOnInit() {
   }
@@ -63,12 +64,28 @@ export class CardModelBComponent implements OnInit {
   }
 
   notify(event) {
-    alert('¡Copiado al portapapeles!');
+    this.toastService.showConfirmToast({
+      title: 'Portapapeles',
+      text:'¡Copiado al portapapeles!',
+      showProgressLine:false,
+      bodyClass:'bg-dark text-white no-shadow',
+      titleClass: 'bg-dark text-white no-shadow',
+      closeButtonClass:'bg-dark text-white no-shadow',
+      toastClass:'bg-dark text-white no-shadow'}
+    );
   }
 
   addExtraData() {
     if(this.extraData.length === maxDataLength) {
-      alert('¡No puedes añadir más datos!');
+      this.toastService.showConfirmToast({
+        title: 'Error',
+        text:'¡No puedes añadir más datos!',
+        showProgressLine:false,
+        bodyClass:'bg-dark text-white no-shadow',
+        titleClass: 'bg-dark text-white no-shadow',
+        closeButtonClass:'bg-dark text-white no-shadow',
+        toastClass:'bg-dark text-white no-shadow'}
+      );
     }
     else {
       this.extraData.push({
