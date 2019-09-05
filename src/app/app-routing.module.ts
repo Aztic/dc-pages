@@ -5,6 +5,7 @@ import {HomeComponent} from './pages/home/home.component';
 import {CardModelBComponent} from './pages/card-model-b/card-model-b.component';
 import {CardModelCComponent} from './pages/card-model-c/card-model-c.component';
 import {CardListComponent} from './pages/card-list/card-list.component';
+import {CardModelDComponent} from './pages/card-model-d/card-model-d.component';
 /*
 const routes: Routes = [
   {
@@ -42,6 +43,11 @@ const routes: Routes = [
   {
     path: 'card-model-c',
     component: CardModelCComponent,
+    data: {animation: 'Card'}
+  },
+  {
+    path: 'card-model-d',
+    component: CardModelDComponent,
     data: {animation: 'Card'}
   },
   {

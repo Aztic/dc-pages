@@ -14,6 +14,7 @@ import { CardListComponent } from './pages/card-list/card-list.component';
 import {ComponentsModule} from './components/components.module';
 import {TopBarComponent} from './components/top-bar/top-bar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CardModelDComponent } from './pages/card-model-d/card-model-d.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     CardModelBComponent,
     CardModelCComponent,
     HomeComponent,
-    CardListComponent
+    CardListComponent,
+    CardModelDComponent
   ],
   imports: [
     BrowserModule,

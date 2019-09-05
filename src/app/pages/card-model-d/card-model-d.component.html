@@ -1,0 +1,130 @@
+<app-top-bar [backRoute]="'/card-list'"></app-top-bar>
+
+<div class="container-fluid">
+  <div class="row justify-content-center" style="margin-top: 20px">
+    <div class="character-pet-card">
+      <div class="image-side" #imgSide>
+        <div class="image-side-inner">
+          <div class="character-image inside-image">
+            <div class="main-image" [ngStyle]="{'background': 'url('+characterImage+')'}"></div>
+
+            <ng-template *ngIf="alwaysVisible && !petSide; then alwaysShow; else normalWay">
+
+            </ng-template>
+            <ng-template #alwaysShow>
+              <div class="overlay-always"></div>
+              <div class="character-hover-always">
+                <div class="inner-image" [ngStyle]="{'background': 'url('+innerCharacterImage+')'}"> </div>
+
+                <div class="main-name" [textContent]="characterName" (input)="characterName=$event.target.textContent" contenteditable>{{characterName}}</div>
+
+                <div class="extra-data" *ngFor="let data of characterExtraData" [textContent]="data.value" (input)="data.value=$event.target.textContent" contenteditable> {{data.value}} </div>
+              </div>
+            </ng-template>
+            <ng-template #normalWay>
+              <div class="overlay"></div>
+              <div class="character-hover">
+                <div class="inner-image" [ngStyle]="{'background': 'url('+innerCharacterImage+')' }"> </div>
+                <div class="main-name" [textContent]="characterName" (input)="characterName=$event.target.textContent" contenteditable>{{characterName}}</div>
+                <div class="extra-data" *ngFor="let data of characterExtraData" [textContent]="data.value" (input)="data.value=$event.target.textContent" contenteditable> {{data.value}} </div>
+              </div>
+            </ng-template>
+
+          </div>
+          <div class="pet-image inside-image" [ngStyle]="{'background': 'url('+petImage+')'}"> </div>
+        </div>
+      </div>
+      <div class="info-side">
+        <div class="selector-menu">
+          <div class="character-selector menu-selector active" (click)="petSide=false">Personaje</div>
+          <div class="pet-selector menu-selector" (click)="petSide=true">Mascota</div>
+        </div>
+        <div class="character-section section active">
+          <div *ngFor="let item of characterDescriptions">
+            <p class="title" [textContent]="item.title" (input)="item.title=$event.target.textContent" contenteditable> {{item.title}}</p>
+            <textarea [(ngModel)]="item.value" [ngStyle]="{'background-color': 'transparent', 'border': 'none','min-height': '50px', 'width':'100%'}"> </textarea>
+          </div>
+        </div>
+        <div class="pet-section section">
+          <div *ngFor="let item of petDescriptions">
+            <p class="title" [textContent]="item.title" (input)="item.title=$event.target.textContent" contenteditable> {{item.title}}</p>
+            <textarea [(ngModel)]="item.value" [ngStyle]="{}"> </textarea>
+          </div>
+        </div>
+      </div>
+      <div class="copyright"> Copyright ©<a href="https://github.com/Aztic">Aztic</a> 2019 </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 30px">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title text-center">Configuración</div>
+        </div>
+        <div class="card-body">
+          <form>
+            <br/>
+            <div class="form-group row">
+              <label for="character-img" class="col-3">Imagen de personaje:</label>
+              <input type="text"
+                     id="character-img"
+                     [(ngModel)]="characterImage" [value]="characterImage"
+                     class="form-control col-7"
+                     name="character-img"
+              >
+            </div>
+            <div class="form-group row">
+              <label for="inner-character-img" class="col-3">Imagen pequeña de personaje:</label>
+              <input type="text"
+                     id="inner-character-img"
+                     [(ngModel)]="innerCharacterImage" [value]="innerCharacterImage"
+                     class="form-control col-7"
+                     name="inner-character-img"
+              >
+            </div>
+            <div class="form-group row">
+              <label for="pet-img" class="col-3">Imagen de mascota:</label>
+              <input type="text"
+                     id="pet-img"
+                     [(ngModel)]="petImage" [value]="petImage"
+                     class="form-control col-7"
+                     name="pet-img"
+              >
+            </div>
+            <div class="form-group row">
+              <label class="switch">
+                <span class="description">Ver parte del hover constantemente</span>
+                <input type="checkbox" id="see-always" [(ngModel)]="alwaysVisible" value="{{alwaysVisible}}" name="see-always">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button class="btn btn-primary"
+                        style="width: 100%"
+                        [copy-clipboard]="copyToClipboard()"
+                        (copied)="notify($event)">Copiar al portapapeles</button>
+              </div>
+              <!--
+              <div class="col-6">
+                <button class="btn btn-primary" style="width:100%">Importar</button>
+              </div>
+              -->
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br/>
+  <br/>
+</div>
+
+
+
+<script>
+
+</script>

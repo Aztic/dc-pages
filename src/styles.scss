@@ -424,3 +424,270 @@ input:active {
 i {
   cursor: pointer;
 }
+
+/** Tablilla mascotas **/
+
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Open+Sans|Roboto|Roboto+Condensed&display=swap');
+.character-pet-card {
+  width: 500px;
+  height: 500px;
+  max-width: 500px;
+  max-height: 500px;
+  background: #a6a6a6;
+  display: inline-block;
+  position: relative;
+}
+.character-pet-card .character-image {
+  width: 187px;
+  height: 470px;
+
+}
+.character-pet-card .character-image .main-image {
+  width: 187px;
+  height: 470px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(https://via.placeholder.com/187x470);
+
+}
+.character-pet-card .pet-image {
+  width: 187px;
+  height: 470px;
+  /**background: url(https://cdn.discordapp.com/attachments/567173362292359168/618792432842178573/unknown.png);**/
+  transform: rotateY(180deg);
+}
+.character-pet-card .image-side {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 187px;
+  height: 470px;
+  margin: 5px;
+  perspective: 1000px;
+}
+.character-pet-card .info-side {
+  display: inline-block;
+  position: relative;
+  float: left;
+  height: 470px;
+  width: 300px;
+  max-width: 300px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.character-pet-card .info-side .selector-menu {
+  width: 100%;
+  height: 50px;
+  background: #5b5b5b;
+  color: white !important;
+  position: relative;
+  display: inline-block;
+  font-family: 'Roboto Condensed', sans-serif;
+  float: left;
+}
+.character-pet-card .info-side .selector-menu .menu-selector {
+  width: 50%;
+  height: 48px;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.character-pet-card .info-side .selector-menu .menu-selector.active {
+  border-bottom: #fff8fd 2px solid;
+  color: white !important;
+}
+.character-pet-card .info-side .section {
+  height: 430px;
+  max-height: 443px;
+  position: absolute;
+  top: 50px;
+  float: left;
+  width: 300px;
+  background: #303030;
+  color: white;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 10px;
+  word-break: break-all;
+}
+.character-pet-card .info-side .section {
+  left: -300px;
+  transition: .4s;
+}
+.character-pet-card .info-side .section.active {
+  left: 0;
+  transition: .4s;
+}
+
+.image-side-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 470px;
+  text-align: center;
+  transition: .3s;
+  transform-style: preserve-3d;
+}
+.inside-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  backface-visibility: hidden;
+}
+
+.image-side.pet .image-side-inner {
+  transform: rotateY(180deg);
+}
+
+/** Character hover **/
+.character-pet-card .character-hover .inner-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: url(https://via.placeholder.com/150x150);
+  position: relative;
+  display: inline-block;
+}
+.character-pet-card .character-hover .extra-data {
+  width: 170px;
+  height: 30px;
+  background: #5b5b5b;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  position: relative;
+  font-family: 'Roboto Condensed', sans-serif;
+  display: inline-block;
+}
+
+.character-pet-card .character-hover {
+  width: 187px;
+  position: absolute;
+  opacity: 0;
+  z-index: 999;
+  height: auto;
+  max-height: 470px;
+  overflow-y: auto;
+  bottom: 10px;
+  transition: opacity .3s;
+}
+
+.character-pet-card .character-hover .extra-data + .extra-data {
+  margin-top: 3px;
+}
+
+/** Character hover always **/
+
+.character-pet-card .character-hover-always .inner-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: url(https://via.placeholder.com/150x150);
+  position: relative;
+  display: inline-block;
+}
+.character-pet-card .character-hover-always .extra-data {
+  width: 170px;
+  height: 30px;
+  background: #5b5b5b;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  position: relative;
+  font-family: 'Roboto Condensed', sans-serif;
+  display: inline-block;
+}
+
+.character-pet-card .character-hover-always {
+  width: 187px;
+  position: absolute;
+  opacity: 1;
+  z-index: 999;
+  height: auto;
+  max-height: 470px;
+  overflow-y: auto;
+  bottom: 10px;
+  transition: opacity .3s;
+}
+
+.character-pet-card .character-hover-always .extra-data + .extra-data {
+  margin-top: 3px;
+}
+
+/** End of always **/
+
+.character-pet-card .main-name {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  font-size: 25px;
+  margin-bottom: 7px;
+  margin-top: 7px;
+}
+
+.character-pet-card .character-image .overlay {
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.character-pet-card .character-image .overlay-always {
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 1;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.character-pet-card .character-image .overlay.hovered {
+  opacity: 1;
+  transition: .2s;
+}
+.character-pet-card .image-side {
+  cursor: pointer;
+}
+.character-pet-card .info-side .section p {
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+  margin-bottom: 5px;
+  color: white !important;
+}
+.character-pet-card .section .title {
+  font-family: 'Dancing Script', cursive !important;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+.character-pet-card .copyright {
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background: #262626;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+  position: absolute;
+  z-index: 999;
+  padding: 0 !important;
+}
+.character-pet-card .copyright a,
+.character-pet-card .copyright a:visited,
+.character-pet-card .copyright a:hover,
+.character-pet-card .copyright a:active{
+  color: white;
+}
+
+/** Fin tablilla mascotas **/
