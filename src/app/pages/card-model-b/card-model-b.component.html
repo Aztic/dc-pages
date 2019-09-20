@@ -37,7 +37,7 @@
 
   <div class="row" style="margin-top: 30px">
     <div class="container-fluid">
-      <div class="card">
+      <div class="card bg-dark text-white">
         <div class="card-header">
           <div class="card-title text-center">Configuración</div>
         </div>
@@ -89,7 +89,7 @@
             </div>
             <div class="form-group row" *ngFor="let data of extraData; let i = index">
 
-                <input type="text" class="col-4 data-value"
+                <input type="text" class="col-4 data-value text-white"
                        [(ngModel)]="data.content"
                        name="content{{i}}"
                        [ngStyle]="{'background-color': 'transparent'}"
@@ -98,12 +98,12 @@
                 <label for="background-color-{{i}}" class="col-2">Fondo:</label>
                 <input id="background-color-{{i}}"
                        [style.background]="data.backgroundColor"
-                       class="color-selector form-control col-1"
+                       class="color-selector form-control col-1 text-white"
                        [(colorPicker)]="data.backgroundColor" />
                 <label for="text-color-{{i}}" class="col-2">Texto:</label>
                 <input id="text-color-{{i}}"
                        [style.background]="data.textColor"
-                       class="color-selector form-control col-1"
+                       class="color-selector form-control col-1 text-white"
                        (colorPickerChange)="reBuildBorder($event)"
                        [(colorPicker)]="data.textColor" />
 
