@@ -12,7 +12,7 @@ import {
 export const slideInAnimation =
   trigger('routeAnimations', [
     transition('Home => *', [
-      query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
+      query(':enter, :leave', style({ position: 'absolute', width: '100%' }), { optional: true }),
       group([
         query(':enter', [
           style({ transform: 'translateX(100%)' }),
@@ -25,7 +25,7 @@ export const slideInAnimation =
       ])
     ]),
     transition('Card-List => Card', [
-      query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
+      query(':enter, :leave', style({ position: 'absolute', width: '100%' }), { optional: true }),
       group([
         query(':enter', [
           style({ transform: 'translateX(100%)' }),
@@ -38,7 +38,7 @@ export const slideInAnimation =
       ])
     ]),
     transition('Card-List => Home', [
-      query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
+      query(':enter, :leave', style({ position: 'absolute', width: '100%' }), { optional: true }),
       group([
         query(':enter', [
           style({ transform: 'translateX(-100%)' }),
@@ -51,7 +51,7 @@ export const slideInAnimation =
       ])
     ]),
     transition('Card => *', [
-      query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
+      query(':enter, :leave', style({ position: 'absolute', width: '100%' }), { optional: true }),
       group([
         query(':enter', [
           style({ transform: 'translateX(-100%)' }),
