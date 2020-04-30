@@ -23,7 +23,7 @@
     "angular-bootstrap-toasts": "^1.1.1",
     "bootstrap": "^4.3.1",
     "html-minifier": "^4.0.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-color-picker": "^8.0.1",
     "popper": "^1.0.1",
     "rxjs": "~6.4.0",
